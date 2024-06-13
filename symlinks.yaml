@@ -30,30 +30,15 @@
     ${XDG_CONFIG_HOME}/wget/.wgetrc: config/general/.wgetrc
 
     # Desktop Apps
-    ${XDG_CONFIG_HOME}/alacritty.yml: config/desktop-apps/alacritty.yml
+    ${XDG_CONFIG_HOME}/kitty: config/kitty
 
     # Bash utils
     ${XDG_CONFIG_HOME}/utils: utils
 
     # MacOS-Only
-    ${XDG_CONFIG_HOME}/yabai/yabairc:
-      if: '[ `uname` = Darwin ]'
-      path: config/macos/yabairc
-    ${XDG_CONFIG_HOME}/skhd/skhdrc:
-      if: '[ `uname` = Darwin ]'
-      path: config/macos/skhdrc
     ~/.Brewfile:
       if: '[ `uname` = Darwin ]'
       path: scripts/installs/Brewfile
-    ~/.finicky.js:
-      if: '[ `uname` = Darwin ]'
-      path: config/macos/.finicky.js
-    ~/Library/Application\ Support/iTerm2/DynamicProfiles:
-      if: '[ `uname` = Darwin ]'
-      path: config/macos/iterm.json
-    ${XDG_CONFIG_HOME}/zsh/.iterm2_shell_integration.zsh:
-      if: '[ `uname` = Darwin ]'
-      path: config/macos/iterm-shell-integration.zsh
 
 # If not already present, create home directories
 - create:

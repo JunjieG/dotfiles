@@ -9,7 +9,6 @@
 ########################################################################
 
 macos_scripts=(
-  "macos-security.sh"     # Applies security settings
   "macos-preferences.sh"  # Sets user preferences
   "macos-apps.sh"         # Configures app options
 )
@@ -20,7 +19,7 @@ if [ ! -z $0 ]; then # Use local files
     $DIR/$mac_script
   done
 else # Run from remote origin
-  REMOTE_DIR="https://raw.githubusercontent.com/Lissy93/dotfiles"
+  REMOTE_DIR="https://raw.githubusercontent.com/JunjieG/dotfiles"
   REMOTE_DIR+="/master/scripts/macos-setup"
   for mac_script in ${macos_scripts[@]}; do
     bash <(curl -s "${REMOTE_DIR}/${mac_script}")

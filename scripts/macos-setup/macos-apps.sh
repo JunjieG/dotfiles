@@ -339,13 +339,6 @@ defaults write com.apple.terminal StringEncodings -array 4
 log_msg "Enable secure entry for Terminal"
 defaults write com.apple.terminal SecureKeyboardEntry -bool true
 
-log_msg "Apply custom Terminal theme"
-theme=$(<config/macos/alicia-term.terminal)
-plutil -replace Window\ Settings.Alicia-Term -xml "$theme" ~/Library/Preferences/com.apple.Terminal.plist
-defaults write com.apple.terminal 'Default Window Settings' -string Alicia-Term  
-defaults write com.apple.terminal 'Startup Window Settings' -string Alicia-Term
-echo 'tell application "Terminal" to set current settings of first window to settings set "Alicia-Term"' | osascript
-
 ###############################################################################
 # Time Machine                                                                #
 ###############################################################################
@@ -434,58 +427,6 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 log_msg "Enable the debug menu in Disk Utility"
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
-
-log_msg "Auto-play videos when opened with QuickTime Player"
-defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
-
-########################################
-# Google Chrome & Google Chrome Canary #
-########################################
-log_section "Chromium"
-
-log_msg "Use the system-native print preview dialog"
-defaults write com.google.Chrome DisablePrintPreview -bool true
-defaults write com.google.Chrome.canary DisablePrintPreview -bool true
-
-log_msg "Expand the print dialog by default"
-defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
-defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
-
-####################
-# Transmission.app #
-####################
-log_section "Transmission"
-
-log_msg "Store incomplete downloads in the Downloads/torrents dir"
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
-
-log_msg "Store completed downloads in Downloads directory"
-defaults write org.m0k.transmission DownloadLocationConstant -bool true
-
-log_msg "Dont prompt for confirmation before downloading"
-defaults write org.m0k.transmission DownloadAsk -bool false
-defaults write org.m0k.transmission MagnetOpenAsk -bool false
-
-log_msg "No confirmation before removing non-downloading transfers"
-defaults write org.m0k.transmission CheckRemoveDownloading -bool true
-
-log_msg "Trash original torrents"
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
-log_msg "Hide the donate message"
-defaults write org.m0k.transmission WarningDonate -bool false
-
-log_msg "Hide the legal disclaimer"
-defaults write org.m0k.transmission WarningLegal -bool false
-
-log_msg "Set IP blocklists"
-defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-
-log_msg "Randomize port on launch"
-defaults write org.m0k.transmission RandomPort -bool true
 
 #################################
 # Restart affected applications #

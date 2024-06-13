@@ -6,7 +6,7 @@
 # Fetches latest changes, symlinks files, and installs dependencies  #
 # Then sets up ZSH, TMUX, Vim as well as OS-specific tools and apps  #
 # Checks all dependencies are met, and prompts to install if missing #
-# For docs and more info, see: https://github.com/lissy93/dotfiles   #
+# For docs and more info, see: https://github.com/JunjieG/dotfiles   #
 #                                                                    #
 # OPTIONS:                                                           #
 #   --auto-yes: Skip all prompts, and auto-accept all changes        #
@@ -30,7 +30,7 @@ START_TIME=`date +%s` # Start timer
 SRC_DIR=$(dirname ${0})
 
 # Dotfiles Source Repo and Destination Directory
-REPO_NAME="${REPO_NAME:-Lissy93/Dotfiles}"
+REPO_NAME="${REPO_NAME:-JunjieG/Dotfiles}"
 DOTFILES_DIR="${DOTFILES_DIR:-${SRC_DIR:-$HOME/.dotfiles}}"
 DOTFILES_REPO="${DOTFILES_REPO:-https://github.com/${REPO_NAME}.git}"
 
@@ -288,14 +288,12 @@ function apply_preferences () {
       echo -e "\n${PURPLE}Applying MacOS system preferences,\
       ensure you've understood before proceeding${RESET}\n"
       macos_settings_dir="$DOTFILES_DIR/scripts/macos-setup"
-      for macScript in "macos-security.sh" "macos-preferences.sh" "macos-apps.sh"; do
+      for macScript in "macos-preferences.sh" "macos-apps.sh"; do
         chmod +x $macos_settings_dir/$macScript && \
         $macos_settings_dir/$macScript --quick-exit --yes-to-all
       done
     else
-      echo -e "\n${PURPLE}Applying preferences to GNOME apps, ensure you've understood before proceeding${RESET}\n"
-      dconf_script="$DOTFILES_DIR/scripts/linux/dconf-prefs.sh"
-      chmod +x $dconf_script && $dconf_script
+      echo -e "\n${RED_B}Only MacOS supported!${RESET}\n"
     fi
   fi
 }
@@ -323,16 +321,6 @@ function intall_macos_packages () {
     killall Finder # Restart finder (required for some apps)
   else
     echo -e "${PURPLE}Skipping Homebrew as requirements not met${RESET}"
-  fi
-  # Restore launchpad structure with lporg
-  launchpad_layout="${DOTFILES_DIR}/config/macos/launchpad.yml"
-  if command_exists lporg && [ -f $launchpad_layout ]; then
-    echo -e "\n${CYAN_B}Would you like to restore launchpad layout? (y/N)${RESET}"
-    read -t $PROMPT_TIMEOUT -n 1 -r ans_restorelayout
-    if [[ $ans_restorelayout =~ ^[Yy]$ ]] || [[ $AUTO_YES = true ]] ; then
-      echo -e "${PURPLE}Restoring Launchpad Layout...${RESET}"
-      yes "" | lporg load $launchpad_layout
-    fi
   fi
   # Check for MacOS software updates, and ask user if they'd like to install
   echo -e "\n${CYAN_B}Would you like to check for OX X system updates? (y/N)${RESET}"
@@ -366,22 +354,8 @@ function install_packages () {
   if [ "$SYSTEM_TYPE" = "Darwin" ]; then
     # Mac OS
     intall_macos_packages
-  elif [ -f "/etc/arch-release" ]; then
-    # Arch Linux
-    arch_pkg_install_script="${DOTFILES_DIR}/scripts/installs/arch-pacman.sh"
-    chmod +x $arch_pkg_install_script
-    $arch_pkg_install_script $PARAMS
-  elif [ -f "/etc/debian_version" ]; then
-    # Debian / Ubuntu
-    debian_pkg_install_script="${DOTFILES_DIR}/scripts/installs/debian-apt.sh"
-    chmod +x $debian_pkg_install_script
-    $debian_pkg_install_script $PARAMS
-  fi
-  # If running in Linux desktop mode, prompt to install desktop apps via Flatpak
-  flatpak_script="${DOTFILES_DIR}/scripts/installs/flatpak.sh"
-  if [[ $SYSTEM_TYPE == "Linux" ]] && [ ! -z $XDG_CURRENT_DESKTOP ] && [ -f $flatpak_script ]; then
-    chmod +x $flatpak_script
-    $flatpak_script $PARAMS
+  else 
+    echo -e "${RED_B}Only MacOS supported!${RESET}"
   fi
 }
 
