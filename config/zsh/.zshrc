@@ -37,20 +37,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
   if [[ -d /opt/homebrew/bin ]]; then
     export PATH=/opt/homebrew/bin:$PATH
   fi
-
-  # If using iTerm, import the shell integration if availible
-  if [[ -f "${XDG_CONFIG_HOME}/zsh/.iterm2_shell_integration.zsh" ]]; then
-    source "${XDG_CONFIG_HOME}/zsh/.iterm2_shell_integration.zsh"
-  fi
-
-  # Append the Android SDK locations to path
-  if [[ -d "${HOME}/Library/Android/" ]]; then
-    export PATH="${HOME}/Library/Android/sdk/emulator:${PATH}"
-    export ANDROID_HOME="${HOME}/Library/Android/sdk"
-    export ANDROID_SDK_ROOT="${HOME}/Library/Android/sdk"
-    export ANDROID_AVD_HOME="${ANDROID_SDK_ROOT}/tools/emulator"
-    export NODE_BINARY="/usr/local/bin/node"
-  fi
 fi
 
 
@@ -80,24 +66,6 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/lib/navigation.zsh
   source ${zsh_dir}/lib/expansions.zsh
   source ${zsh_dir}/lib/key-bindings.zsh
-fi
-
-# If using Pyenv, import the shell integration if availible
-if [[ -d "$PYENV_ROOT" ]] && \
-  command -v pyenv >/dev/null 2>&1 && \
-  command -v pyenv-virtualenv-init >/dev/null; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-# If using Tilix, import the shell integration if availible
-if [ $TILIX_ID ] || [ $VTE_VERSION ] && [[ -f "/etc/profile.d/vte.sh" ]]; then
-  source /etc/profile.d/vte.sh
-fi
-
-# Append Cargo to path, if it's installed
-if [[ -d "$HOME/.cargo/bin" ]]; then
-  export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # Add Zoxide (for cd, quick jump) to shell
