@@ -17,6 +17,7 @@ cask_args appdir: '~/Applications', require_sha: true
 # Taps
 tap 'homebrew/bundle'
 tap 'homebrew/core'
+tap 'homebrew/cask'
 tap 'homebrew/services'
 tap 'blacktop/tap'
 tap 'browsh-org/homebrew-browsh'
@@ -71,7 +72,7 @@ brew 'dua-cli'      # Disk usage analyzer and monitor (better du)
 brew 'glances'      # Resource monitor + web and API
 brew 'goaccess'     # Web log analyzer and viewer
 brew 'gping'        # Interactive ping tool, with graph
-brew 'speedtest-cli'# Command line speed test utility
+brew 'speedtest-cli' # Command line speed test utility
 
 # CLI Productivity Apps
 brew 'newsboat'     # RSS / ATOM reader
@@ -119,6 +120,7 @@ brew 'terminal-notifier' # Trigger Mac notifications from terminal
 # Media
 cask 'vlc'          # Media player
 brew 'pandoc'       # Universal file converter
+brew 'anhoder/go-musicfox/go-musicfox' # CLI网易云
 
 # Personal Applications
 cask '1password'      # Password manager (proprietary)
