@@ -43,7 +43,7 @@ brew 'ctags'        # Indexing of file info + headers
 brew 'diff-so-fancy'# Readable file compares (better diff)
 brew 'duf'          # Get info on mounted disks (better df)
 brew 'entr'         # Run command whenever file changes
-brew 'exa'          # Listing files with info (better ls)
+brew 'eza'          # Listing files with info (better ls)
 brew 'exiftool'     # Read, write and modify exif data
 brew 'fzf'          # Fuzzy file finder and filtering
 brew 'hyperfine'    # Benchmarking for arbitrary commands
@@ -101,7 +101,6 @@ cask 'boop'           # Text transformation tool
 brew 'gradle'         # Build automation for Java
 cask 'kitty'          # Better terminal emulator
 cask 'postman'        # HTTP API testing app
-cask 'visual-studio-code' # Code editor
 
 # Development Langs, Compilers, Package Managers and SDKs
 brew 'openjdk'        # Java development kit
@@ -133,7 +132,6 @@ cask 'arc'
 #############################################################
 
 # Fonts
-tap 'homebrew/cask-fonts'
 cask 'font-fira-code'
 cask 'font-hack'
 cask 'font-inconsolata'

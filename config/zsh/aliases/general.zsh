@@ -25,25 +25,12 @@ if alias_not_used t; then; alias t='touch'; fi
 if alias_not_used v; then; alias v='vim'; fi
 
 # File listing options
-alias lr='ls -R' # List files in sub-directories, recursivley
-alias lf='ls -A | grep' # Use grep to find files
-alias lc='find . -type f | wc -l' # Shows number of files
-alias ld='ls -l | grep "^d"' # List directories only
-
-# If eza installed, then use eza for some ls commands
-if command_exists eza ; then
-  alias l='eza -aF --icons' # Quick ls
-  alias la='eza -aF --icons' # List all
-  alias ll='eza -laF --icons' # Show details
-  alias lm='eza -lahr --color-scale --icons -s=modified' # Recent
-  alias lb='eza -lahr --color-scale --icons -s=size' # Largest / size
-  alias tree='f() { eza -aF --tree -L=${1:-2} --icons };f'
-else
-  alias la='ls -A' # List all files/ includes hidden
-  alias ll='ls -lAFh' # List all files, with full details
-  alias lb='ls -lhSA' # List all files sorted by biggest
-  alias lm='ls -tA -1' # List files sorted by last modified
-fi
+alias l='eza -lF --icons' # Quick ls
+alias ls='eza -lF --icons' 
+alias la='eza -laF --icons' # List all
+alias ll='eza -laF --icons' 
+alias lm='eza -lahr --color-scale --icons -s=modified' # Recent
+alias lb='eza -lahr --color-scale --icons -s=size' # Largest / size
 
 # List contents of packed file, depending on type
 ls-archive () {
