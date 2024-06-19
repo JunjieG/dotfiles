@@ -33,7 +33,6 @@ tap 'kdash-rs/kdash'
 # CLI Essentials
 brew 'git'          # Version controll
 brew 'neovim'       # Text editor
-brew 'ranger'       # Directory browser
 brew 'tmux'         # Term multiplexer
 
 # CLI Basics
@@ -41,7 +40,7 @@ brew 'aria2'        # Resuming download util (better wget)
 brew 'bat'          # Output highlighting (better cat)
 brew 'broot'        # Interactive directory navigation
 brew 'ctags'        # Indexing of file info + headers
-brew 'diff-so-fancy'# Readable file compares (better diff)
+brew 'diff-so-fancy' # Readable file compares (better diff)
 brew 'duf'          # Get info on mounted disks (better df)
 brew 'entr'         # Run command whenever file changes
 brew 'eza'          # Listing files with info (better ls)
@@ -64,7 +63,6 @@ brew 'trash-cli'    # Record and restore removed files
 brew 'zoxide'       # Auto-learning navigation (better cd)
 
 # CLI Monitoring and Performance Apps
-brew 'bmon'         # Bandwidth utilization monitor 
 brew 'ctop'         # Container metrics and monitoring
 brew 'dog'          # DNS lookup client (better dig)
 brew 'btop'       # Resource monitoring (like htop)
@@ -118,7 +116,6 @@ brew 'terminal-notifier' # Trigger Mac notifications from terminal
 #############################################################
 
 # Media
-cask 'vlc'          # Media player
 brew 'pandoc'       # Universal file converter
 brew 'anhoder/go-musicfox/go-musicfox' # CLI网易云
 
