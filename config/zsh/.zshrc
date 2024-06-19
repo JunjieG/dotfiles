@@ -63,6 +63,7 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/lib/navigation.zsh
   source ${zsh_dir}/lib/expansions.zsh
   source ${zsh_dir}/lib/key-bindings.zsh
+  source ${zsh_dir}/lib/awx.zshc
 fi
 
 # Add Zoxide (for cd, quick jump) to shell
