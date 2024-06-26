@@ -6,9 +6,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Make and cd into nested directories
 antigen bundle caarlos0/zsh-mkc
 
-# Quickly jump into frequently used directories
-antigen bundle agkozak/zsh-z
-
 # Extra zsh completions
 antigen bundle zsh-users/zsh-completions
 

@@ -136,21 +136,8 @@ cask 'font-hack'
 cask 'font-inconsolata'
 cask 'font-meslo-lg-nerd-font'
 
-# Mac OS Quick-Look Plugins
-cask 'qlcolorcode'    # QL for code with highlighting
-cask 'qlimagesize'    # QL for size info for images
-cask 'qlmarkdown'     # QL for markdown files
-cask 'qlprettypatch'  # QL for patch / diff files
-cask 'qlstephen'      # QL for dev text files
-cask 'qlvideo'        # QL for video formats
-cask 'quicklook-csv'  # QL for tables in CSV format
-cask 'quicklook-json', args: { require_sha: false } # QL for JSON, with trees
-cask 'quicklookapk',   args: { require_sha: false } # QL for Android APKs
-cask 'webpquicklook',  args: { require_sha: false } # QL for WebP image files
-
 # Mac OS Mods and Imrovments
 cask 'alt-tab'        # Much better alt-tab window switcher
-cask 'openinterminal' # Finder button, opens directory in terminal
 cask 'alfred'         # Link to encrypted mobile messenger
 
 # Mac OS Utility Apps
