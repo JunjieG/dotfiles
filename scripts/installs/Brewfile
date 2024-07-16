@@ -36,41 +36,22 @@ brew 'neovim'       # Text editor
 brew 'tmux'         # Term multiplexer
 
 # CLI Basics
-brew 'aria2'        # Resuming download util (better wget)
 brew 'bat'          # Output highlighting (better cat)
-brew 'broot'        # Interactive directory navigation
 brew 'ctags'        # Indexing of file info + headers
 brew 'diff-so-fancy' # Readable file compares (better diff)
-brew 'duf'          # Get info on mounted disks (better df)
-brew 'entr'         # Run command whenever file changes
 brew 'eza'          # Listing files with info (better ls)
-brew 'exiftool'     # Read, write and modify exif data
 brew 'fzf'          # Fuzzy file finder and filtering
 brew 'hyperfine'    # Benchmarking for arbitrary commands
-brew 'jdupes'       # Duplicate file finder
-brew 'just'         # Powerful command runner (better make)
 brew 'jq'           # JSON parser, output and query files
-brew 'most'         # Multi-window scroll pager (better less)
 brew 'procs'        # Advanced process viewer (better ps)
 brew 'ripgrep'      # Searching within files (better grep)
-brew 'rsync'        # Fast incremental file transfer
 brew 'sd'           # RegEx find and replace (better sed)
-brew 'thefuck'      # Auto-correct miss-typed commands
 brew 'tldr'         # Community-maintained docs (better man)
-brew 'tokei'        # Count lines of code (better cloc)
 brew 'tree'         # Directory listings as tree structure
-brew 'trash-cli'    # Record and restore removed files
 brew 'zoxide'       # Auto-learning navigation (better cd)
 
 # CLI Monitoring and Performance Apps
-brew 'ctop'         # Container metrics and monitoring
-brew 'dog'          # DNS lookup client (better dig)
 brew 'btop'       # Resource monitoring (like htop)
-brew 'dua-cli'      # Disk usage analyzer and monitor (better du)
-brew 'glances'      # Resource monitor + web and API
-brew 'goaccess'     # Web log analyzer and viewer
-brew 'gping'        # Interactive ping tool, with graph
-brew 'speedtest-cli' # Command line speed test utility
 
 # CLI Productivity Apps
 brew 'newsboat'     # RSS / ATOM reader
@@ -78,18 +59,7 @@ brew 'task'         # Todo + task management
 
 # CLI Development Suits
 brew 'httpie'       # HTTP / API testing testing client
-brew 'lazydocker'   # Full Docker management app
 brew 'lazygit'      # Full Git management app
-brew 'kdash'        # Kubernetes management
-
-# CLI External Sercvices
-cask 'ngrok'        # Reverse proxy for sharing localhost
-brew 'navi'         # Browse, search, read cheat sheets
-
-# CLI Fun
-brew 'neofetch'     # Show system data and ditstro info
-brew 'pipes-sh'     # Cool terminal pipe screen saver
-brew 'pv'           # Pipe viewer, with animation options
 
 #############################################################
 # Software Development                                      #
@@ -97,16 +67,12 @@ brew 'pv'           # Pipe viewer, with animation options
 
 # Development Apps
 cask 'boop'           # Text transformation tool
-brew 'gradle'         # Build automation for Java
 cask 'kitty'          # Better terminal emulator
 cask 'postman'        # HTTP API testing app
 
 # Development Langs, Compilers, Package Managers and SDKs
 brew 'openjdk'        # Java development kit
 brew 'python'         # Python interpreter
-
-# DevOps
-brew 'docker'         # Containers
 
 # Development Utils
 brew 'terminal-notifier' # Trigger Mac notifications from terminal
@@ -120,7 +86,6 @@ brew 'pandoc'       # Universal file converter
 brew 'anhoder/go-musicfox/go-musicfox' # CLI网易云
 
 # Personal Applications
-cask '1password'      # Password manager (proprietary)
 cask 'obsidian'       # Knowledge base that works on top of a local folder of plain text Markdown files
 
 # Browsers
@@ -138,7 +103,6 @@ cask 'font-meslo-lg-nerd-font'
 
 # Mac OS Mods and Imrovments
 cask 'alt-tab'        # Much better alt-tab window switcher
-cask 'alfred'         # Link to encrypted mobile messenger
 
 # Mac OS Utility Apps
 cask 'keka'           # File archiver and extractor
