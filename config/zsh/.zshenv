@@ -24,7 +24,6 @@ export GIT_CONFIG="${XDG_CONFIG_HOME}/git/.gitconfig"
 export LESSHISTFILE="-" # Disable less history.
 export PIP_CONFIG_FILE="${XDG_CONFIG_HOME}/pip/pip.conf"
 export PIP_LOG_FILE="${XDG_DATA_HOME}/pip/log"
-export TMUX_PLUGIN_MANAGER_PATH="${XDG_DATA_HOME}/tmux/plugins"
 export WGETRC="${XDG_CONFIG_HOME}/wget/.wgetrc"
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export ZLIB="${ZDOTDIR}/lib"

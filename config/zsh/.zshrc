@@ -45,7 +45,6 @@ if [[ -d $zsh_dir ]]; then
   # Import alias files
   source ${zsh_dir}/aliases/general.zsh
   source ${zsh_dir}/aliases/git.zsh
-  source ${zsh_dir}/aliases/tmux.zsh
   source ${zsh_dir}/aliases/alias-tips.zsh
 
   # Setup Antigen, and import plugins
