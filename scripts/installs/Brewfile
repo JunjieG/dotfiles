@@ -33,7 +33,7 @@ tap 'kdash-rs/kdash'
 # CLI Essentials
 brew 'git'          # Version controll
 brew 'neovim'       # Text editor
-brew 'tmux'         # Term multiplexer
+brew 'zellij'       # Better tmux (arguably)
 
 # CLI Basics
 brew 'bat'          # Output highlighting (better cat)
@@ -46,7 +46,7 @@ brew 'jq'           # JSON parser, output and query files
 brew 'procs'        # Advanced process viewer (better ps)
 brew 'ripgrep'      # Searching within files (better grep)
 brew 'sd'           # RegEx find and replace (better sed)
-brew 'tldr'         # Community-maintained docs (better man)
+brew 'tealdeer'     # tldr but faster
 brew 'tree'         # Directory listings as tree structure
 brew 'zoxide'       # Auto-learning navigation (better cd)
 
@@ -67,7 +67,7 @@ brew 'lazygit'      # Full Git management app
 
 # Development Apps
 cask 'boop'           # Text transformation tool
-cask 'kitty'          # Better terminal emulator
+cask 'warp'          # Better terminal emulator
 cask 'postman'        # HTTP API testing app
 
 # Development Langs, Compilers, Package Managers and SDKs
