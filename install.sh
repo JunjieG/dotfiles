@@ -191,7 +191,6 @@ function pre_setup_tasks () {
   system_verify "zsh" false
   system_verify "vim" false
   system_verify "nvim" false
-  system_verify "tmux" false
 
   # If XDG variables arn't yet set, then configure defaults
   if [ -z ${XDG_CONFIG_HOME+x} ]; then
@@ -262,18 +261,12 @@ function apply_preferences () {
   fi
 
   # Prompt user to update ZSH, Tmux and Vim plugins, then reload each
-  echo -e "\n${CYAN_B}Would you like to install / update ZSH, Tmux and Vim plugins? (y/N)${RESET}"
+  echo -e "\n${CYAN_B}Would you like to install / update ZSH and Vim plugins? (y/N)${RESET}"
   read -t $PROMPT_TIMEOUT -n 1 -r ans_cliplugins
   if [[ $ans_cliplugins =~ ^[Yy]$ ]] || [[ $AUTO_YES = true ]] ; then
     # Install / update vim plugins with Plug
     echo -e "\n${PURPLE}Installing Vim Plugins${RESET}"
     vim +PlugInstall +qall
-
-    # Install / update Tmux plugins with TPM
-    echo -e "${PURPLE}Installing TMUX Plugins${RESET}"
-    chmod ug+x "${XDG_DATA_HOME}/tmux/tpm"
-    sh "${TMUX_PLUGIN_MANAGER_PATH}/tpm/bin/install_plugins"
-    sh "${XDG_DATA_HOME}/tmux/plugins/tpm/bin/install_plugins"
 
     # Install / update ZSH plugins with Antigen
     echo -e "${PURPLE}Installing ZSH Plugins${RESET}"

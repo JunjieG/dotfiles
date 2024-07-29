@@ -18,7 +18,6 @@ And always make a backup of your pre-existing config files before over-writing t
 
 config/
 ├── git/                      # Git (version control) config files
-├── tmux/                     # Tmux (multiplexer) config, sessions, bindings and plugin list
 ├── vim/                      # Vim (text editor) config, key bindings and plugin list
 ├── zsh/                      # ZSH (shell) settings, aliases, utils and plugin list
 ├── general/                  # All other config files for *nix-based systems
